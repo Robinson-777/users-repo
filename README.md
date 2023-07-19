@@ -1,9 +1,45 @@
-# mern-stack-typescript
+User Managing.
+
+This web application is uesed to manage the users. there are three pages 
+
+1. Home
+2. Add User
+3. User details
+
+Folder structure
+
+ui ===> front-end - react js code
+api===> backend - node js (express);
+
+Local Build
+
+UI applicaton 
+Redirect to ui folder (cd ui) then execute npm install and npm start 
+ui application is run in http://localhost:3000 
 
 
-Hi Robinson,
+API application
 
- 
+Redirect to api folder (cd api) then execute npm install and npm start 
+api application is run in http://localhost:3080 
+
+
+Docker Development deployement
+
+docker-compose build --no-cache
+docker-compose run (imageid)
+docker-compose up
+
+application run in 3000 and 3080 port.
+
+
+Docker production deployement 
+
+docker build -t user:1.0 .
+docker run -p 3080:3080 user:1.0
+
+you can access ui and api application in the same port - 3080
+
 
 Thank you for the interview. Please find the task details below. As discussed, please provide an approximate estimation on when the task can be submitted, and then try to keep up with your estimate 😊
 

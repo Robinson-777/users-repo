@@ -1,7 +1,6 @@
 {
   "name": "ui",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.2",
@@ -32,6 +31,7 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://127.0.0.1:3080",
+  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-restapi-mongo-ts",
+  "name": "api",
   "version": "1.0.0",
   "description": "Example Project on how to build and develop REST API with NodeJS and MongoDB",
   "main": "index.js",
@@ -10,12 +10,9 @@
     "build": "webpack",
     "prod-build": "gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bbachi/nodejs-restapi-mongo-ts.git"
-  },
   "keywords": [],
   "author": "Robinson",
+  "homepage": ".",
   "dependencies": {
     "cors": "2.8.5",
     "dotenv": "^8.2.0",
