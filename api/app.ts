@@ -6,22 +6,29 @@ import { UserController } from "./controller/user.controller";
 import swaggerUi = require('swagger-ui-express');
 import fs = require('fs');
 import cors = require('cors');
+require('dotenv').config();
 
 class App {
 
     public express: express.Application;
     public logger: APILogger;
     public userController: UserController;
+    public isSwaggerEnable = process.env.SWAGGER;
 
-    /* Swagger files start */
-    private swaggerFile: any = (process.cwd() + "/swagger/swagger.json");
-    private swaggerData: any = fs.readFileSync(this.swaggerFile, 'utf8');
-    private customCss: any = fs.readFileSync((process.cwd() + "/swagger/swagger.css"), 'utf8');
-    private swaggerDocument = JSON.parse(this.swaggerData);
-    /* Swagger files end */
-
+    public swaggerFile: any;
+    public swaggerData: any;
+    public customCss: any;
+    public swaggerDocument;
 
     constructor() {
+        /* Swagger files start */
+        if (this.isSwaggerEnable) {
+            this.swaggerFile = (process.cwd() + "/swagger/swagger.json");
+            this.swaggerData = fs.readFileSync(this.swaggerFile, 'utf8');
+            this.customCss = fs.readFileSync((process.cwd() + "/swagger/swagger.css"), 'utf8');
+            this.swaggerDocument = JSON.parse(this.swaggerData);
+        }
+        /* Swagger files end */
         this.express = express();
         this.middleware();
         this.routes();
@@ -61,7 +68,8 @@ class App {
         });
 
         // swagger docs
-        this.express.use('/api/docs', swaggerUi.serve, swaggerUi.setup(this.swaggerDocument, null, null, this.customCss));
+        if (this.isSwaggerEnable)
+            this.express.use('/api/docs', swaggerUi.serve, swaggerUi.setup(this.swaggerDocument, null, null, this.customCss));
 
         // handle undefined routes
         this.express.use("*", (req, res, next) => {
