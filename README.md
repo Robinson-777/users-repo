@@ -10,7 +10,8 @@ This web application is uesed to manage the users. there are three pages
 Folder structure
 
 ui ===> front-end - react js code
-api===> backend - node js (express);
+
+api===> backend - node js (express)
 
 Local Build
 
@@ -20,7 +21,6 @@ ui application is run in http://localhost:3000
 
 
 API application
-
 Redirect to api folder (cd api) then execute npm install and npm start 
 api application is run in http://localhost:3080 
 
@@ -29,16 +29,20 @@ Docker Development deployement
 docker-compose build --no-cache
 docker-compose run (imageid)
 docker-compose up
+UI and API applications are running in port 3000 and 3080.
 
-application run in 3000 and 3080 port.
+Swagger-url 
+
+http://localhost:3080/api/docs/
 
 
 Docker production deployement 
 
 docker build -t user:1.0 .
-docker run -p 3080:3080 user:1.0
+docker runing -p 3080:3080 user:1.0
 
 you can access ui and api application in the same port - 3080
+both applications are runing in http://localhost:3080 
 
 
 Thank you for the interview. Please find the task details below. As discussed, please provide an approximate estimation on when the task can be submitted, and then try to keep up with your estimate 😊

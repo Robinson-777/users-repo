@@ -15,11 +15,11 @@ RUN ls
 FROM node:14-slim
 WORKDIR /root/
 COPY api/swagger/ /root/swagger/
-COPY --from=ui-build /usr/src/ui/build ./ui/build
+COPY --from=ui-build /usr/src/ui/build ../ui/build
 COPY --from=api-build /usr/src/api/dist .
 
 RUN ls
 
-EXPOSE 3081
+EXPOSE 3080
 
 CMD ["node", "api.bundle.js"]
