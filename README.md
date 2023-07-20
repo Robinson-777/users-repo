@@ -2,9 +2,10 @@ User Managing.
 
 This web application is uesed to manage the users. there are three pages 
 
-1. Home
-2. Add User
-3. User details
+1. Home ===> add user and user details pages are showed in single page 
+2. Add User ===> add user page is used to create a user.
+3. User details===> view all users in table .
+
 
 Folder structure
 
@@ -22,7 +23,6 @@ API application
 
 Redirect to api folder (cd api) then execute npm install and npm start 
 api application is run in http://localhost:3080 
-
 
 Docker Development deployement
 

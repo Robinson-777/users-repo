@@ -22,7 +22,7 @@ class App {
 
     constructor() {
         /* Swagger files start */
-        if (this.isSwaggerEnable) {
+        if (this.isSwaggerEnable === 'true') {
             this.swaggerFile = (process.cwd() + "/swagger/swagger.json");
             this.swaggerData = fs.readFileSync(this.swaggerFile, 'utf8');
             this.customCss = fs.readFileSync((process.cwd() + "/swagger/swagger.css"), 'utf8');
@@ -68,7 +68,7 @@ class App {
         });
 
         // swagger docs
-        if (this.isSwaggerEnable)
+        if (this.isSwaggerEnable === 'true') 
             this.express.use('/api/docs', swaggerUi.serve, swaggerUi.setup(this.swaggerDocument, null, null, this.customCss));
 
         // handle undefined routes
